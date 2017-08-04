@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap{
+				height: 100px;
+				width: 100px;
+				margin: 100px auto;
+				padding: 100px;
+				perspective: 300px;
+			}
+			#box{
+				position: relative;
+				width: 100px;
+				height: 100px;
+				
+			}
+			#box div{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				line-height: 100px;
+				text-align: center;
+				background: green;	
+				border: 1px solid;
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="box" style="width:100px;height: 100px;">
+
+			</div>
+		</div>
+	</body>
+	<script type="text/javascript">
+		window.onload=function(){
+			var boxNode = document.querySelector("#box")
+			
+			var n = 8;
+			//定义一个变量，为初始值，n为多少条棱柱
+			var deg = 360/n;
+			
+			var flagText = 'center center ' +
+			
+			
+		}
+	</script>
+</html>

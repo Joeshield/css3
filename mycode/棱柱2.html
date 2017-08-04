@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title>立方体</title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap{
+				width: 100px;
+				height: 100px;
+				background:url(img/xfz.png) no-repeat;
+				/*为容器添加一个背景图片*/
+				background-size:100% ;
+				margin: 100px auto;
+				padding: 100px;
+				border:1px solid;
+				perspective: 300px;
+				/*//景深*/
+			}
+			
+			#box{
+				position: relative;
+				width: 100px;
+				height: 100px;
+				transform-style: preserve-3d;
+				transition: 4s transform;
+				transform-origin: center center -50px;
+				/*backface-visibility: hidden;*/
+			}
+			#box div{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				opacity: 0.3;
+				/*设置透明度*/
+				backface-visibility: hidden;
+				/*并且设置背面透明*/
+			}
+			
+			#box div:nth-child(1){
+				background: red;
+			}
+			#box div:nth-child(2){
+				background: orange;
+				transform: translateZ(-100px) rotateY(180deg);
+			}
+			#box div:nth-child(3){
+				background: yellow;
+				left: -100px;
+				transform-origin: right;
+				transform: rotateY(-90deg);
+			}
+			#box div:nth-child(4){
+				background: green;
+				right: -100px;
+				transform-origin: left;
+				transform: rotateY(90deg);
+			}
+			#box div:nth-child(5){
+				background: blue;
+				top: -100px;
+				transform-origin: bottom;
+				transform: rotateX(90deg);
+			}
+			#box div:nth-child(6){
+				background: purple;
+				bottom: -100px;
+				transform-origin: top;
+				transform: rotateX(-90deg);
+			}
+			
+			#wrap:hover #box{
+				/*transform: rotateX(360deg);*/
+				transform: rotate3d(7,9,5,360deg);
+			}
+			
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="box">
+				<div>前</div>
+				<div>后</div>
+				<div>左</div>
+				<div>右</div>
+				<div>上</div>
+				<div>下</div>
+			</div>
+		</div>
+	</body>
+</html>

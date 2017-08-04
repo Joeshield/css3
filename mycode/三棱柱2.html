@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<style type="text/css">
+			*{
+				margin: 0;
+				padding: 0;
+			}
+			#wrap{
+				width: 100px;
+				height: 100px;
+				margin: 100px auto;
+				padding: 100px;
+				perspective: 300px;
+			}
+			#box{
+				position: relative;
+				width: 100px;
+				height: 100px;
+				transform-style: preserve-3d;
+				transition: 3s transform;
+				transform-origin: center center -28.86px;
+			}
+			
+			#box div{
+				position: absolute;
+				width: 100px;
+				height: 100px;
+				text-align: center;
+				line-height: 100px;
+				transform-origin: center center -28.86px;
+				/*设置中心基点*/
+			}
+			
+			#box div:nth-child(1){
+				background: red;
+			}
+			#box div:nth-child(2){
+				background: green;
+				transform: rotateY(120deg);
+			}
+			#box div:nth-child(3){
+				background: yellow;
+				transform: rotateY(240deg);
+			}
+			
+			#wrap:hover #box{
+				transform: rotateY(360deg);
+			}
+		</style>
+	</head>
+	<body>
+		<div id="wrap">
+			<div id="box">
+				<div>A</div>
+				<div>B</div>
+				<div>C</div>
+			</div>
+		</div>
+	</body>
+</html>
